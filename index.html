@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elysian Scents - Luxury Perfumes</title>
+    <style>
+        body { font-family: 'Arial', sans-serif; margin: 0; padding: 0; background-color: #1a1a1a; color: #f0f0f0; }
+        header { background-color: #333; padding: 20px; text-align: center; }
+        nav { margin-top: 10px; }
+        nav a { color: #ffd700; text-decoration: none; margin: 0 15px; font-weight: bold; }
+        nav a:hover { color: #fff; }
+        .hero { background-image: url('https://via.placeholder.com/1200x400/333/ffd700?text=Elysian+Scents'); background-size: cover; height: 400px; display: flex; align-items: center; justify-content: center; text-align: center; color: #fff; }
+        .hero h1 { font-size: 3em; margin: 0; }
+        .hero p { font-size: 1.5em; }
+        .section { padding: 50px; max-width: 1200px; margin: auto; }
+        .products { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+        .product { background-color: #222; padding: 20px; border-radius: 10px; text-align: center; transition: transform 0.3s; }
+        .product:hover { transform: scale(1.05); }
+        .product img { width: 100%; height: 200px; object-fit: cover; border-radius: 10px; }
+        .product h3 { color: #ffd700; }
+        .product button { background-color: #ffd700; color: #000; border: none; padding: 10px 20px; cursor: pointer; border-radius: 5px; }
+        .product button:hover { background-color: #fff; }
+        form { display: flex; flex-direction: column; max-width: 400px; margin: auto; }
+        form input, form textarea { margin-bottom: 10px; padding: 10px; border: none; border-radius: 5px; }
+        form button { background-color: #ffd700; color: #000; border: none; padding: 10px; cursor: pointer; border-radius: 5px; }
+        footer { background-color: #333; text-align: center; padding: 20px; }
+        .slideshow { position: relative; width: 100%; height: 300px; overflow: hidden; }
+        .slide { display: none; width: 100%; height: 100%; background-size: cover; background-position: center; }
+        .slide.active { display: block; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Elysian Scents</h1>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#products">Products</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <div>
+            <h1>Awaken Your Senses to Eternity</h1>
+            <p>Discover luxury perfumes crafted from nature's finest.</p>
+            <a href="#products"><button style="background-color: #ffd700; color: #000; border: none; padding: 15px 30px; font-size: 1.2em; cursor: pointer;">Shop Now</button></a>
+        </div>
+    </section>
+
+    <section id="about" class="section">
+        <h2>About Us</h2>
+        <p>Elysian Scents draws inspiration from ancient myths and ethereal landscapes. Our perfumes are made with sustainable, natural ingredients, ensuring every scent tells a story of timeless beauty.</p>
+        <div class="slideshow">
+            <div class="slide active" style="background-image: url('https://via.placeholder.com/800x300/333/ffd700?text=Mythical+Inspiration');"></div>
+            <div class="slide" style="background-image: url('https://via.placeholder.com/800x300/333/ffd700?text=Natural+Ingredients');"></div>
+            <div class="slide" style="background-image: url('https://via.placeholder.com/800x300/333/ffd700?text=Eternal+Beauty');"></div>
+        </div>
+    </section>
+
+    <section id="products" class="section">
+        <h2>Our Perfumes</h2>
+        <div class="products">
+            <div class="product">
+                <img src="https://via.placeholder.com/300x200/ffd700/000?text=Celestial+Bloom" alt="Celestial Bloom">
+                <h3>Celestial Bloom</h3>
+                <p>Floral notes of jasmine and rose, evoking starry nights. $85</p>
+                <button>Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="https://via.placeholder.com/300x200/ffd700/000?text=Mystic+Ember" alt="Mystic Ember">
+                <h3>Mystic Ember</h3>
+                <p>Smoky amber and sandalwood for a mysterious allure. $90</p>
+                <button>Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="https://via.placeholder.com/300x200/ffd700/000?text=Enchanted+Veil" alt="Enchanted Veil">
+                <h3>Enchanted Veil</h3>
+                <p>Light citrus and vanilla, like a hidden paradise. $75</p>
+                <button>Add to Cart</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <h2>Contact Us</h2>
+        <form id="contactForm">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" rows="5" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Elysian Scents. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Slideshow functionality
+        let slides = document.querySelectorAll('.slide');
+        let currentSlide = 0;
+        setInterval(() => {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide + 1) % slides.length;
+            slides[currentSlide].classList.add('active');
+        }, 3000);
+
+        // Form validation
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! We\'ll get back to you soon.');
+        });
+    </script>
+</body>
+</html>
